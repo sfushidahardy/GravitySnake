@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/phasor2.wav-67293e88fe620dfc32ffed11c9101c57.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/phasor2.wav"
+dest_files=[ "res://.import/phasor2.wav-67293e88fe620dfc32ffed11c9101c57.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

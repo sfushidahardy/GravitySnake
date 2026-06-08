@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/460509__florianreichelt__hitting-in-a-face.mp3-076898d551436deb2e677a2e1da9b14e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/460509__florianreichelt__hitting-in-a-face.mp3"
+dest_files=[ "res://.import/460509__florianreichelt__hitting-in-a-face.mp3-076898d551436deb2e677a2e1da9b14e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

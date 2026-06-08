@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/splat.wav-3f6d02aab8d79b9b55cfa2d56e62ef26.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/splat.wav"
+dest_files=[ "res://.import/splat.wav-3f6d02aab8d79b9b55cfa2d56e62ef26.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
