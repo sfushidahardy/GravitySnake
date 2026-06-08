@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/food/foodtest.png" type="Texture" id=1]
+[ext_resource path="res://food.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/sfx/gem.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "diamond"
+length = 1.2
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 0, 2 ]
+}
+
+[node name="food" type="StaticBody2D" groups=[
+"Food",
+]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/diamond = SubResource( 2 )
+
+[node name="scaletween" type="Tween" parent="."]
+
+[node name="fadetween" type="Tween" parent="."]
+
+[node name="gem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="terminationtimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="terminationtimer" to="." method="_on_terminationtimer_timeout"]

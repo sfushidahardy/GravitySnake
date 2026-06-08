@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://snake.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/sfx/pop1.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/sfx/hit.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/sfx/phasor2.wav" type="AudioStream" id=4]
+
+[node name="snake" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+collision_mask = 2
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+collision_mask = 8
+
+[node name="RayCast2D5" type="RayCast2D" parent="."]
+collision_mask = 16
+collide_with_areas = true
+
+[node name="movementcooldown" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true
+
+[node name="shootingcooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="freefalltimer" type="Timer" parent="."]
+wait_time = 0.07
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 800
+limit_bottom = 600
+smoothing_speed = 20.0
+
+[node name="wintimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="evapsegmenttimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="deathtimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="dmgtimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="pop1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 2 )
+
+[node name="hit1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 3 )
+
+[node name="nyuum" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="flashcolourtimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="flashwhitetimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="movementcooldown" to="." method="_on_movementcooldown_timeout"]
+[connection signal="timeout" from="shootingcooldown" to="." method="_on_shootingcooldown_timeout"]
+[connection signal="timeout" from="freefalltimer" to="." method="_on_freefalltimer_timeout"]
+[connection signal="timeout" from="wintimer" to="." method="_on_wintimer_timeout"]
+[connection signal="timeout" from="evapsegmenttimer" to="." method="_on_evapsegmenttimer_timeout"]
+[connection signal="timeout" from="deathtimer" to="." method="_on_deathtimer_timeout"]
+[connection signal="timeout" from="dmgtimer" to="." method="_on_dmgtimer_timeout"]
+[connection signal="timeout" from="flashcolourtimer" to="." method="_on_flashcolourtimer_timeout"]
+[connection signal="timeout" from="flashwhitetimer" to="." method="_on_flashwhitetimer_timeout"]
