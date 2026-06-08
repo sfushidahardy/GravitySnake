@@ -1,5 +1,6 @@
 # GravitySnake
 An in-progress Godot 3 project: a turn-based puzzle game inspired by platformers and "Snake"
+
 <img width="480" height="305" alt="gravsnakepreview2" src="https://github.com/user-attachments/assets/6be32dea-00d3-43c5-a5b7-15a811948053" />
 
 A turn-based SPG (snake-playing game) in which you eat gems to grow in size, but you're a rigid-body that is also affected by gravity. The demo contains three levels (in the "demo" directory) and the "Project_files" directory contains all source files.
