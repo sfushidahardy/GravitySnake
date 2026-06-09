@@ -13,6 +13,8 @@ A turn-based SPG (snake-playing game) in which you eat gems to grow in size, but
 
 That's it!
 
+If this doesn't work, the most likely issue is that your browser has security settings against fetching local files. In that case, you can also try playing the demo [through my website](https://sfushidahardy.github.io/misc/GravitySnakeDemo/Gravitysnake.html).
+
 ## Credit?
 <img width="480" height="300" alt="gravsnakepreview3" src="https://github.com/user-attachments/assets/f91c6d37-9660-487a-b77e-963529455c60" />
 
